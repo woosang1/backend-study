@@ -28,6 +28,10 @@ logs/
 *.ear
 hs_err_pid*
 
+# html 언어 표기안되게
+*.html linguist-vendored
+
+
 # User-specific properties
 # 보안 정보(DB 비밀번호 등)가 포함된 파일을 git에 올리지 않도록 합니다.
 # application.properties나 application.yml 파일에 민감한 정보가 있다면,
