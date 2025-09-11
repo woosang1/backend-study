@@ -14,4 +14,12 @@
 
 ---
 
+## 📚 참고자료
+- **스프링부트**: https://start.spring.io/
+- **가이드 블로그**: https://miintto.github.io/docs/spring-initailize (박민재)
+- **레퍼런스**: https://github.com/miintto/matstagram-spring-kotlin (박민재)
+- 👑 **박민재** (서버개발자): https://github.com/miintto
+
 ## 📁 프로젝트 구조
+
+
