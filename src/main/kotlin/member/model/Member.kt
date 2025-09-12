@@ -1,6 +1,6 @@
-package com.example.demo.model
+package member.model
 
-data class Todo(
+data class Member(
     val id: Long? = null,
     val title: String,
     val completed: Boolean = false
