@@ -2,7 +2,7 @@ package com.example.demo.member.controller
 
 import com.example.demo.member.dto.CreateMemberRequest
 import com.example.demo.member.dto.UpdateMemberRequest
-import com.example.demo.member.model.Member1
+import com.example.demo.member.model.Member
 import com.example.demo.member.service.MemberService
 import org.springframework.web.bind.annotation.*
 
@@ -15,22 +15,22 @@ class MemberController(private val service: MemberService) {
     }
 
     @PostMapping
-    fun create(@RequestBody request: CreateMemberRequest): Member1 {
+    fun create(@RequestBody request: CreateMemberRequest): Member {
         return service.create(request.name, request.email)
     }
 
     @GetMapping("/{id}")
-    fun get(@PathVariable id: Long): Member1 {
+    fun get(@PathVariable id: Long): Member {
         return service.findById(id)
     }
 
     @GetMapping("/all")
-    fun getAll(): List<Member1> {
+    fun getAll(): List<Member> {
         return service.getAll()
     }
 
     @PutMapping("/{id}")
-    fun update(@PathVariable id: Long, @RequestBody request: UpdateMemberRequest): Member1? {
+    fun update(@PathVariable id: Long, @RequestBody request: UpdateMemberRequest): Member? {
         return service.update(id, request.name, request.email)
     }
 

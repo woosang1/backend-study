@@ -1,4 +1,4 @@
-package com.example.demo.member.model
+package com.example.demo.pokemon.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
@@ -9,7 +9,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "Member1")
-data class Member1(
+data class Pokemon(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,

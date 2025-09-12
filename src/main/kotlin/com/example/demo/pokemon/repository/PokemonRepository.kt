@@ -1,8 +1,8 @@
-package com.example.demo.member.repository
+package com.example.demo.pokemon.repository
 
 import com.example.demo.member.model.Member
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface MemberRepository : JpaRepository<Member, Long>
+interface PokemonRepository : JpaRepository<Member, Long>

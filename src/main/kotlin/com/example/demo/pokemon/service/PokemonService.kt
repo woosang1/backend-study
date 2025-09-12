@@ -1,11 +1,11 @@
-package com.example.demo.member.service
+package com.example.demo.pokemon.service
 
 import com.example.demo.member.model.Member
-import com.example.demo.member.repository.MemberRepository
+import com.example.demo.pokemon.repository.PokemonRepository
 import org.springframework.stereotype.Service
 
 @Service
-class MemberService(private val repository: MemberRepository) {
+class PokemonService(private val repository: PokemonRepository) {
 
     // ID로 회원 조회 (필수 반환)
     fun findById(id: Long): Member = repository.findById(id).orElseThrow {
