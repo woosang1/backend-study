@@ -1,4 +1,4 @@
-package member.contorller
+package member.controller
 
 import member.dto.CreateMemberRequest
 import member.dto.UpdateMemberRequest
