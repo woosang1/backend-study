@@ -1,9 +1,9 @@
-package member.controller
+package com.example.demo.member.controller
 
-import member.dto.CreateMemberRequest
-import member.dto.UpdateMemberRequest
-import member.model.Member1
-import member.service.MemberService
+import com.example.demo.member.dto.CreateMemberRequest
+import com.example.demo.member.dto.UpdateMemberRequest
+import com.example.demo.member.model.Member1
+import com.example.demo.member.service.MemberService
 import org.springframework.web.bind.annotation.*
 
 @RestController  // 2025: Kotlin DSL 지원으로 MockMvc 테스트 쉬움
@@ -24,7 +24,7 @@ class MemberController(private val service: MemberService) {
         return service.findById(id)
     }
 
-    @GetMapping
+    @GetMapping("/all")
     fun getAll(): List<Member1> {
         return service.getAll()
     }

@@ -1,7 +1,7 @@
-package member.service
+package com.example.demo.member.service
 
-import MemberRepository2
-import member.model.Member1
+import com.example.demo.member.model.Member1
+import com.example.demo.member.repository.MemberRepository2
 import org.springframework.stereotype.Service
 
 @Service

@@ -1,4 +1,4 @@
-package member.model
+package com.example.demo.member.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
