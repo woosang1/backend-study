@@ -11,6 +11,11 @@
 - **IDE**: IntelliJ IDEA Ultimate  
 - **프레임워크**: Spring Boot `3.2.4`  
 - **빌드 도구**: Gradle  
+-  **DB**: Mysql
+- 
+<img src="screenshots/spring_boot.jpeg" width="800" alt="1">
+<img src="screenshots/mysql.png" width="800" alt="2">
+
 
 ---
 
