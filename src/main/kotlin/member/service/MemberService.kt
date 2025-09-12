@@ -1,22 +1,36 @@
 package member.service
 
-import member.repository.MemberRepository
-import member.model.Member
+import MemberRepository2
+import member.model.Member1
 import org.springframework.stereotype.Service
 
 @Service
-class MemberService(private val repository: MemberRepository) {
+class MemberService(private val repository: MemberRepository2) {
 
-    fun getAllTodos(): List<Member> = repository.findAll()
+    // ID로 회원 조회 (필수 반환)
+    fun findById(id: Long): Member1 = repository.findById(id).orElseThrow {
+        NoSuchElementException("Member with id $id not found")
+    }
 
-    fun getTodoById(id: Long): Member? = repository.findById(id)
+    // 모든 회원 조회
+    fun getAll(): List<Member1> = repository.findAll()
 
-    fun createTodo(title: String): Member = repository.save(Member(title = title))
+    // 회원 생성
+    fun create(name: String, email: String): Member1 = repository.save(Member1(name = name, email = email))
 
-    fun updateTodo(id: Long, title: String, completed: Boolean): Member? =
-        repository.findById(id)?.let { todo ->
-            repository.update(id, todo.copy(title = title, completed = completed))
+    // 회원 업데이트
+    fun update(id: Long, name: String, email: String): Member1? =
+        repository.findById(id).orElse(null)?.let { member ->
+            repository.save(member.copy(name = name, email = email))
         }
 
-    fun deleteTodo(id: Long): Boolean = repository.deleteById(id)
+    // 회원 삭제
+    fun delete(id: Long): Boolean {
+        return if (repository.existsById(id)) {
+            repository.deleteById(id)
+            true
+        } else {
+            false
+        }
+    }
 }
