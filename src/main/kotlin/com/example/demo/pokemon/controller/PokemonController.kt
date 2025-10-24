@@ -4,6 +4,7 @@ import com.example.demo.pokemon.dto.CreatePokemonRequest
 import com.example.demo.pokemon.dto.UpdatePokemonRequest
 import com.example.demo.pokemon.model.Pokemon
 import com.example.demo.pokemon.service.PokemonService
+import com.example.demo.pokemon.service.PokeApiListResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -116,7 +117,7 @@ class PokemonController(private val service: PokemonService) {
     fun fetchPokemonList(
         @RequestParam(defaultValue = "20") limit: Int,
         @RequestParam(defaultValue = "0") offset: Int
-    ): Mono<ResponseEntity<Any>> {
+    ): Mono<ResponseEntity<PokeApiListResponse>> {
         return service.fetchPokemonList(limit, offset)
             .map { response -> ResponseEntity.ok(response) }
             .onErrorReturn(ResponseEntity.badRequest().build())
