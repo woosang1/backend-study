@@ -36,6 +36,9 @@ dependencies {
     // mysql
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")  // JPA + Hibernate
     implementation("com.mysql:mysql-connector-j")
+    
+    // WebClient for external API calls
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
 }
 
 kotlin {

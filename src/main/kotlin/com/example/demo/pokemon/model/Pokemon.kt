@@ -8,7 +8,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "Member1")
+@Table(name = "pokemon")
 data class Pokemon(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,24 @@ data class Pokemon(
     @Column(nullable = false, length = 50)
     val name: String,
 
-    @Column(nullable = false, unique = true, length = 100)
-    val email: String
+    @Column(nullable = false, length = 20)
+    val type: String,
+
+    @Column(nullable = false)
+    val hp: Int,
+
+    @Column(nullable = false)
+    val attack: Int,
+
+    @Column(nullable = false)
+    val defense: Int,
+
+    @Column(nullable = false)
+    val speed: Int,
+
+    @Column(length = 500)
+    val imageUrl: String? = null,
+
+    @Column(length = 1000)
+    val description: String? = null
 )
